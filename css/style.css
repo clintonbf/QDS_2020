@@ -43,7 +43,7 @@ a:hover {
 
 .card_landing_factors {
     background-color: white;
-    border:none;
+    border: none;
     width: 19.375rem;
     height: 4.5rem;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.10);
@@ -61,21 +61,21 @@ a:hover {
     position: absolute;
 }
 
-.card{
-        justify-content: center;
-        display: flex;
-        color: white;
-        border-radius: 5px;
-        border: none;
+.card {
+    justify-content: center;
+    display: flex;
+    color: white;
+    border-radius: 5px;
+    border: none;
 }
 
-.btn_back{
+.btn_back {
     margin-left: -300px;
-     margin-top: -250px;
+    margin-top: -250px;
     /* padding-bottom: 5px;    */
 }
 
-.btn_showResult{
+.btn_showResult {
     width: 19.4375rem;
     height: 2.8125rem;
     background-color: #19A4A5;
@@ -85,12 +85,12 @@ a:hover {
     align-items: center;
     justify-content: center;
     display: flex;
-    color:#ffffff;
-    font-size: 1.375rem;
+    color: #ffffff;
+    font-size: 1.125rem;
 }
 
 /* home */
-.header{
+.header {
     position: absolute;
     top: 0;
     width: 23.4375rem;
@@ -98,13 +98,14 @@ a:hover {
     background-color: #19A4A5;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.10);
 }
-.btn_back_white{
+
+.btn_back_white {
     margin-left: 29px;
     margin-top: 10px;
     position: absolute;
 }
 
-.title_header{
+.title_header {
     color: #ffffff;
     font-weight: bold;
     display: flex;
@@ -112,27 +113,122 @@ a:hover {
     font-size: 1rem;
 }
 
-.subTitle{
+.subTitle {
     display: flex;
     flex-direction: row;
 }
 
-.subTitle_item{
-    flex:1;
+.subTitle_item {
+    flex: 1;
     text-align: center;
     color: #ffffff;
 }
-.bold{
+
+.bold {
     font-weight: bold;
 }
-.underLine{
+
+.underLine {
     width: 11.71875rem;
     height: .1875rem;
     background-color: #ffffff;
     margin-top: 10px;
 }
-.btn_search{
+
+.btn_search {
     position: absolute;
-    bottom: 130px;
+    margin-top: 20.25rem;
     z-index: 100;
+}
+
+/* search */
+.search_bg {
+    top: 0;
+    width: 23.4375rem;
+    height: 100%;
+    background-color: #19A4A5;
+}
+
+.searchBarDiv {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.searchBar {
+    border-style: none;
+    width: 20.3125rem;
+    height: 2rem;
+    border-radius: 2rem;
+    background-color: #19A4A5;
+}
+
+::placeholder {
+    color: rgb(222, 222, 222);
+    font-size: 24px;
+}
+
+.searchIcon {
+    position: relative;
+    right: 35px;
+}
+
+.txt_search {
+    position: relative;
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
+    top: 50px;
+    left: 30px;
+}
+
+.card_result {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    width: 21.6875rem;
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.region{
+    font-size: 20px;
+    font-weight: bold;
+    color:#030303;
+}
+.score
+{
+    font-size: 3rem;
+    font-weight: bold;
+    color:#538EE5;
+}
+
+.title_result{
+    margin-top: -200px;
+}
+.img_city{
+    position: absolute;
+    margin-top: 16.45rem;
+}
+.factors{
+    font-size: 1.375rem;
+    font-weight: bold;
+    color:#F2B885;
+    margin-right: 245px;
+}
+.card_result_factors{
+    width: 20.40625rem;
+    height: 5.375rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.07);
+    float: left;
+}
+.card_title{
+    flex-direction: row;
+    display: flex;
+}
+.card_title:first-child{
+    color:blue
 }
