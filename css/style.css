@@ -1,0 +1,24 @@
+.wrapper{
+    width: 23.4375rem;
+    height: 50.75rem;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: column;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+.appName{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    color: #19A4A5;
+    font-size: 20;
+}
+a{
+    text-decoration: none;
+}
