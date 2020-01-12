@@ -29,7 +29,7 @@ a:hover {
     text-decoration: none;
 }
 
-/* home */
+/* landing */
 .title {
     color: #538EE5;
     font-size: 1.125rem;
@@ -67,4 +67,10 @@ a:hover {
         color: white;
         border-radius: 5px;
         border: none;
+}
+
+.btn_back{
+    margin-left: -300px;
+     margin-top: -250px;
+    /* padding-bottom: 5px;    */
 }
