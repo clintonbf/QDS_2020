@@ -2,15 +2,16 @@ import requests
 from requests import RequestException
 
 dataset = input("Which dataset do you want (type it exactly)")
+rows = input("How many rows do you want displayed? (type an integer)")
 region = input("Specify your neighbourhood (press enter for none)")
 
 # Make the REST request GET request
 # Here we're asking for rental properties with outstanding (ie. unresolved) issues
 if region:
-    resp = requests.get('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=' + dataset,
+    resp = requests.get('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=' + dataset + "&rows=" + rows,
                         params={'refine.geo_local_area': region})
 else:
-    resp = requests.get('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=' + dataset)
+    resp = requests.get('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=' + dataset + "&rows=" + rows)
 
 if resp.status_code != 200:
     # This means something went wrong.
