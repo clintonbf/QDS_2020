@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Search Result</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
     </style>
@@ -21,28 +21,22 @@
 <body>
     <div class="container wrapper">
         <div class="search_bg">
-            <div>
-                <a href="home-map.html" class="btn_back_white" style="position: absolute;">
-                    <img width="15px" src="./asset/btn_back_blue.png">
-                </a>
-                <div class="title_header pt-2" style="background-color:#ffffff;color: #19A4A5; font-size: 1.3125rem;">
-                    Kerrisdale</div>
-                <div class="wrapper">
-                    <img src="./asset/img_score_example.png" width="224px">
-                    <div class="score mt-2">85/100</div>
-                    <div class="factors mt-5 mb-3">Factors</div>
-                    <div class="card_result_factors">
-                        <div class="card_title">
-                            <div>4 </div>
-                            <div> School</div>
-                        </div>
-                        <div class="card_desc">There are 4 schools in this area</div>
+            <a href="search.html" class="btn_back_white" style="position: absolute;">
+                <img width="15px" src="./asset/btn_back_blue.png">
+            </a>
+
+            <div class="wrapper">
+                <div class="title title_result mb-5">Your address belongs to:</div>
+                <a href="detail.html">
+                    <div class="card_result mt-5">
+                        <div class="region">Kerrisdale</div>
+                        <div class="score">85/100</div>
                     </div>
-                </div>
+                </a> 
+
+                <img class="img_city" width="373px" src="./asset/img_city.png ">
+
             </div>
-
-
-
 
         </div>
 
@@ -51,4 +45,4 @@
 
 </body>
 
-</html>
+</html> 
