@@ -97,6 +97,7 @@ a:hover {
     height: 5.3125rem;
     background-color: #19A4A5;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.10);
+    z-index: 100;
 }
 
 .btn_back_white {

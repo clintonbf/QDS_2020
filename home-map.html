@@ -16,6 +16,18 @@
 
     <!-- Customized CSS-->
     <link href="css/style.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
+    <style>
+        #my-map {
+            width:375px;
+            height:885px;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,6 +52,7 @@
                 </a>
             </div>
         </div>
+        <div id="my-map"></div>
         <div class="btn_search">
             <a href="search.html">
                 <img width="45px" src="./asset/btn_search.png">
@@ -47,6 +60,95 @@
         </div>
 
     </div>
+
+    <script>
+        window.onload = function () {
+            let schools = "schools.geojson";
+            let transit = "rapid-transit-stations.geojson";
+            let parks = "parks.geojson";
+
+            // Marker icons
+            const redIcon = new L.Icon({
+                iconUrl: 'img/marker-icon-2x-red.png',
+                shadowUrl: 'img/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            });
+
+            var map = L.map('my-map', {zoomControl: false})
+                .setView([49.25, -123.089], 12);
+
+            var osmmap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Layer 1 (Schools)
+            var geojsonSchools = L.geoJson(null, {
+                pointToEachLayer: function(feature, latlng) {
+                    return L.marker(latlng);
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.geo_local_area +
+                        '<p><b> School Name: ' + feature.properties.school_name +
+                        '<p><b> School Category: ' + feature.properties.school_category +
+                        '<p><b> Address: ' + feature.properties.address + '</b></p>');
+                }
+            });
+
+            // Layer 1
+            $.getJSON(schools, function (data) {
+                geojsonSchools.addData(data).addTo(map);
+            });
+
+            // Layer 2 (Transit)
+            var geojsonTransit = L.geoJson(null, {
+                pointToEachLayer: function (feature, latlng) {
+                    return L.marker(latlng)
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.geo_local_area +
+                        '<p><b> Station Name: ' + feature.properties.station + '</b></p>');
+                }
+            });
+
+            // Layer 2
+            $.getJSON(transit, function (data) {
+                geojsonTransit.addData(data);
+            });
+
+            // Layer 3 (Parks)
+            var geojsonParks = L.geoJson(null, {
+                pointToEachLayer: function (feature, latlng) {
+                    return L.marker(latlng)
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.neighbourhoodname +
+                        '<p><b> Park Name: ' + feature.properties.name + '</b></p>')
+                }
+            });
+
+            // Layer 3
+            $.getJSON(parks, function (data) {
+                geojsonParks.addData(data);
+            });
+
+            // Controlling Layers
+
+            var baseMaps = {
+                'Open StreetMap': osmmap
+            };
+
+            var mapLayers = {
+                'Schools': geojsonSchools,
+                'Transit': geojsonTransit,
+                'Parks': geojsonParks
+            };
+
+            L.control.layers(baseMaps, mapLayers).addTo(map);
+        }
+    </script>
 
 </body>
 
