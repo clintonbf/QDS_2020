@@ -1,6 +1,10 @@
 import requests
 from requests import RequestException
 
+
+#Make the REST request GET request
+resp = requests.get('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=schools', {'refine.geo_local_area': 'Kitsilano'})
+
 dataset = input("Which dataset do you want (type it exactly)")
 rows = input("How many rows do you want displayed? (type an integer)")
 region = input("Specify your neighbourhood (press enter for none)")
